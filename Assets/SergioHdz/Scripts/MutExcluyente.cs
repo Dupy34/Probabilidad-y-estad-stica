@@ -1,24 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MutExcluyente : MonoBehaviour
 {
-    public InputField inputProbabilityA;
-    public InputField inputProbabilityB;
+    public TMP_InputField inputProbabilityA;
+    public TMP_InputField inputProbabilityB;
 
-    public Text resultText;
+    public TextMeshProUGUI resultText;
 
-    // Método que se ejecutará cuando se presione el botón de cálculo
-    public void CalcularProbabilidad()
+    public void CalculateProbability()
     {
-        // Convertir las entradas de texto a números (probabilidades)
-        float probabilidadA = float.Parse(inputProbabilityA.text);
-        float probabilidadB = float.Parse(inputProbabilityB.text);
 
-        // Calcular la probabilidad total usando la Regla de la Suma para eventos mutuamente excluyentes
-        float probabilidadTotal = probabilidadA + probabilidadB;
+        float ProbabilityA = float.Parse(inputProbabilityA.text);
+        float ProbabilityB = float.Parse(inputProbabilityB.text);
 
-        // Mostrar el resultado en el UI
-        resultText.text = "La probabilidad total es: " + probabilidadTotal.ToString();
+        float probaTotal = ProbabilityA + ProbabilityB;
+
+        resultText.text = "La probabilidad total es: " + probaTotal.ToString();
     }
 }
